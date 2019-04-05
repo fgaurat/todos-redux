@@ -1,0 +1,12 @@
+version: '3'
+services:
+  react-redux:
+    build: ./todo-docker/
+    ports:
+    - "8080:80"
+    links:
+    - rest-server
+  rest-server:
+    image: sesteva/deployd
+    ports:
+    - "2403:2403"
